@@ -1,0 +1,21 @@
+<meta charset = "UTF-8">
+
+<script>
+
+function pulaLinha(){
+    document.write("<br>");
+}
+
+function mostra(frase){
+    document.write(frase);
+    pulaLinha();
+}
+
+var nome = prompt("Digite o seu nome: ");
+var numero01 = prompt(nome + ", digite o primeiro número ");
+var numero02 = prompt(nome + ", digite o segundo número: ");
+
+mostra (nome + ", o valor de " + numero01 + " multiplicado pelo " + numero02 + " é " + (numero01*numero02));
+
+
+</script>

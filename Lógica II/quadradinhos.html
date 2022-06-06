@@ -1,0 +1,24 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaQuadradinho(x, y, a, b, cor) { //quando é adicionado o x nas coordenadas, é possível modificar o tamanho de x ao chamar a função
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle= cor; // recebeu a opção de cor e, no momento de chamar a função, basta colocar a cor desejada.
+        pincel.fillRect(x,y,a,b); // terá x de largura, 0 de altura até 50 de altura e largura
+        pincel.fillStroke=''; // caso não seja definida uma cor, ele é adicionado preto automaticamente
+        pincel.strokeRect(x, y,a,b);
+
+    } 
+
+    desenhaQuadradinho(0, 0, 50, 50, 'red');
+    desenhaQuadradinho(50, 0, 50, 50, 'pink');
+    desenhaQuadradinho(100, 0, 50, 50, 'black' );
+    desenhaQuadradinho(0, 50, 50, 50, 'yellow');
+    desenhaQuadradinho(50, 50, 50, 50, 'blue');
+    desenhaQuadradinho(100, 50, 50, 50, 'green');
+
+
+</script>

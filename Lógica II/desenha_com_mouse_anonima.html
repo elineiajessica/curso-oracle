@@ -1,0 +1,38 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenha = false;
+
+  // atribuindo diretamente a função anônima
+
+  // a função foi diretamente chamada junto ao comando, logo exibindo a parte do código que será executada quando a função for chamada. Nesse caso, quando o mouse estiver sendo clicado e arrastado na tela, um circulo será desenhado como em um pincel.
+   tela.onmousemove = function(evento) {
+
+        if(desenha) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            pincel.fillStyle = 'blue';
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+        }
+        console.log(x + ',' + y);
+    }
+
+    tela.onmousedown = function() {
+
+        desenha = true;
+    }
+
+     tela.onmouseup = function() { //  a função se tornou anônima porque o próprio comando chamou a função. entendendo que tela.onmouseup significa que o mouse encontra-se sem clicar, entende-se que a função será chamada quando o mouse não estiver mais sendo utilizado. 
+
+        desenha = false;
+    }
+
+</script>

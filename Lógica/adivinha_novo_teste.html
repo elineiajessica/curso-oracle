@@ -1,0 +1,28 @@
+<meta charset ="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo!</button>
+
+<script>
+
+    var segredos = Math.round(Math.random()*10);
+    var input = document.querySelector("input");
+    input.value
+    input.focus();
+
+    function verifica() {
+            if(input.value==segredo) {
+            alert("Você acertou!");
+        } else {
+            alert ("Você errou!");
+        }
+        input.value=""; // ao receber essa string vazia, automaticamente, o campo para digitar de input fica limpo para adicionar outra informação e testar novamente o código. 
+        input.focus(); // o foco volta a caixinha para digitar um novo número.
+    }
+
+   
+var button = document.querySelector("button");
+button.onclick = verifica; //caso coloque () ele chamará a função. Já, quando não é colocado (), ele chama o que tem dentro do função, ou seja, faz rodar o seu código. 
+
+
+</script>

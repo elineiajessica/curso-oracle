@@ -1,0 +1,32 @@
+<meta charset ="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+    pulaLinha();
+    }
+
+    function calculaImc(peso,altura) {
+        return(peso / (altura*altura) ); 
+    }
+
+    var nome = prompt("Qual seu nome?");
+    var alturaInformada = prompt(nome + " qual sua altura?");
+    var pesoInformado = prompt(nome + " informe o seu peso:");
+    var imc = Math.round(calculaImc(pesoInformado, alturaInformada));
+
+    if(imc < 18.5) { // Ele entra nesse if quando o IMC é abaixo do valor 18.5
+        mostra( "Seu imc é " + imc + " voce está abaixo do recomendado");
+    } else if (imc >=18.5 && imc <= 35) { // Aqui estou entrando quando o valor é maior igual a 18.5 e menor igual a 35, o código abaixo é executado 
+        mostra("Seu imc é " + imc + " seu imc está excelente.");
+    } else { // Caso não entre em nenhum if, ele vai executar o código abaixo
+        mostra("Seu imc é " + imc +  " Você está acima do recomendado");
+    }
+         
+
+</script>
